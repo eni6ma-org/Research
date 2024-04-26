@@ -121,6 +121,9 @@ Limitations of Shor's Algorithm for AES-256 Attack:
 
 ---
 
+I will be adding additional details on cryptography as time permits. 
+
+
 
 ### Eni6ma.org - Copyright 2024 All Rights Reserved
 #### By Dylan Rosario (Inventor of Rosario Cypher)
