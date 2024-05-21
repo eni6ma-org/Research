@@ -1,3 +1,5 @@
+## Basic Middle School Math  (for 12 year olds)
+
 To distribute 40 distinct items evenly into four boxes, each box must contain exactly 10 items, since $\frac{40}{4} = 10$.
 
 The problem is to determine the number of ways to divide 40 distinct items into four groups of 10. This can be solved using the multinomial coefficient, which generalizes the binomial coefficient to multiple groups.
@@ -42,11 +44,13 @@ $$
 
 ---
 
-To determine how long it would take to perform \( 2,353,500,000,000,000,000,000 \) iterations at a rate of 10 iterations per second, we can use the following steps:
+## Basic Elementary School Math (for 9 year olds)
+
+To determine how long it would take to perform  2,353,500,000,000,000,000,000  iterations at a rate of 10 iterations per second, we can use the following steps:
 
 1. **Calculate the total time in seconds:**
 
-$$ \text{Total seconds} = \frac{\text{Total iterations}}{\text{Iterations per second}} $$
+$\text{Total seconds} = \frac{\text{Total iterations}}{\text{Iterations per second}}$
 
 Given:
 - Total iterations: \( 2,353,500,000,000,000,000,000 \)
