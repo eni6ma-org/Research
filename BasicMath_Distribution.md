@@ -39,7 +39,35 @@ To find the exact number, it is practical to use computational tools, but here's
 
 $$
 \frac{40!}{(10!)^4} \approx 2.35357 \times 10^{21}
-$$
 
-So, the number of different ways to evenly distribute 40 distinct items into four boxes is approximately $2.35357 \times 10^{21}$. This is a very large number, reflecting the vast number of possible distributions.
+---
 
+To determine how long it would take to perform \( 2,353,500,000,000,000,000,000 \) iterations at a rate of 10 iterations per second, we can use the following steps:
+
+1. **Calculate the total time in seconds:**
+
+$$ \text{Total seconds} = \frac{\text{Total iterations}}{\text{Iterations per second}} $$
+
+Given:
+- Total iterations: \( 2,353,500,000,000,000,000,000 \)
+- Iterations per second: 10
+
+$\text{Total seconds} = \frac{2,353,500,000,000,000,000,000}{10} = 235,350,000,000,000,000,000 \, \text{seconds}$
+
+2. **Convert seconds to larger units of time:**
+
+We need to convert seconds to minutes, hours, days, and years for a more comprehensible duration.
+
+- **Seconds to minutes:**
+  $\text{Total minutes} = \frac{235,350,000,000,000,000,000}{60} \approx 3,922,500,000,000,000,000 \, \text{minutes}$
+
+- **Minutes to hours:**
+  $\text{Total hours} = \frac{3,922,500,000,000,000,000}{60} \approx 65,375,000,000,000,000 \, \text{hours}$
+
+- **Hours to days:**
+  $\text{Total days} = \frac{65,375,000,000,000,000}{24} \approx 2,723,958,333,333,333 \, \text{days}$
+
+- **Days to years:**
+  $\text{Total years} = \frac{2,723,958,333,333,333}{365} \approx 7,461,793,970,822 \, \text{years}$
+
+So, it would take approximately **7,461,793,970,822 years** to perform   2,353,500,000,000,000,000,000  iterations at a rate of 10 iterations per second.
