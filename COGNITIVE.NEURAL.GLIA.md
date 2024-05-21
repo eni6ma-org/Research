@@ -484,3 +484,55 @@ Given:
 2. **Expert Processing and Integration**: Each expert $E_i$ processes the input independently, and their outputs are integrated (using tensor products) with the weights derived from the gatekeeper. This integration sums over all experts $N$.
 3. **Loss and Regularization**: The loss function $\psi$ evaluates the discrepancy between the aggregated expert output $\mathbf{Y}$ and the true output $\mathbf{y}_{true}$. Regularization is added to control overfitting by penalizing large weights.
 4. **Weight Update**: Weights are updated over time $t$ by subtracting a scaled gradient of the loss (including regularization), calculated over the data distribution $\mu$.
+
+---
+
+```
+Initialize:
+    W_g, b_g           // Gatekeeper weights and biases
+    Experts[]          // Array of expert networks E_i
+    W(t-1)             // Previous time step weights
+    alpha              // Learning rate
+    lambda             // Regularization coefficient
+    omega_domain       // Domain for integration
+    mu                 // Measure for integration
+
+Function Distributed_Expert_System(x, y_true):
+    // Step 1: Gatekeeper Processing
+    g_x = Integrate(W_g * x + b_g, over omega_domain, measure mu)
+    G_x = Softmax(g_x)   // Applying softmax to gatekeeper output
+
+    // Step 2: Expert Processing
+    Y = Zero_Tensor()    // Initialize the tensor for integrated outputs
+    for i from 1 to N:
+        y_i = Integrate(Experts[i](x), over x)   // Process input by each expert
+        Y += G_x[i] * y_i   // Integrate expert outputs weighted by gatekeeper
+
+    // Step 3: Calculate Loss and Regularization
+    L = Integrate(Loss(Y, y_true) + lambda * Norm(W)^2, measure mu)
+
+    // Step 4: Weight Update
+    for each W in W_g and Experts:
+        gradient = Compute_Gradient(L, W)  // Compute gradient of loss w.r.t. weights
+        W(t) = W(t-1) - alpha * Integrate(gradient, over time t)  // Update weights
+
+    return W(t)   // Return updated weights
+
+Function Softmax(vector):
+    max_value = Max(vector)  // Find the maximum value to prevent overflow in exponential calculations
+    exp_vector = Exp(vector - max_value)  // Subtract max from each element and exponentiate
+    sum_exp_vector = Sum(exp_vector)  // Sum all the exponentiated values
+    return exp_vector / sum_exp_vector  // Divide each exp value by the sum for normalization
+
+
+Function Cross_Entropy(predicted, true):
+    // Calculate the cross-entropy loss between predictions and true labels
+    return -Sum(true * Log(predicted))
+
+Function Loss(predicted, true):
+    // Validate inputs, ensure they are probabilities and contain no zeros
+    predicted = Max(predicted, epsilon)  // epsilon is a small number close to zero
+    return Cross_Entropy(predicted, true)
+
+```
+
