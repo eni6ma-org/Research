@@ -39,8 +39,7 @@ $$
 
 To find the exact number, it is practical to use computational tools, but here's the simplified calculation approach:
 
-$$
-\frac{40!}{(10!)^4} \approx 2.35357 \times 10^{21}
+$\frac{40!}{(10!)^4} \approx 2.35357 \times 10^{21}$
 
 ---
 
