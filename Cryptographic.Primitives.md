@@ -9,9 +9,9 @@
 
 Nondeterministic polynomial time: (NP), for non-deterministic polynomial time, is one of the best-known complexity classes in theoretical computer science. A decision problem (a problem that has a yes/no answer) is said to be in NP if it is solvable in polynomial time by a non-deterministic Turing machine. Equivalently, and more intuitively, a decision problem is in NP if, if the answer is yes, a proof can be verified by a Turing machine in polynomial time.
 
-A verifier for a language $\mathrm{A}$ is an algorithm $\mathrm{V}$, where $\mathrm{A}=\{w \mid V$ accepts $\langle w, c\rangle$ for some string $c\}$. We measure the time of a verifier only in terms of the length of $w$, so a polynomial time verifier runs in polynomial time in the length of $w$.
+A verifier for a language ${A}$ is an algorithm $\mathrm{V}$, where ${A}= {w \mid V }$ accepts $\langle w, c\rangle$ for some string $c$. We measure the time of a verifier only in terms of the length of $w$, so a polynomial time verifier runs in polynomial time in the length of $w$.
 
-A language A is polynomially verifiable if it has a polynomial time verifier. NP is the class of languages that have polynomial time verifiers. $N(t(n))=\{L \mid L$ is a language decided by a $O(t(n))$ time nondeterministic Turing machine $\} . \mathrm{NP}=$ nondeterministic time $(n k)$.
+A language A is polynomially verifiable if it has a polynomial time verifier. NP is the class of languages that have polynomial time verifiers. $N(t(n))=L\mid L$ is a language decided by a $O(t(n))$ time nondeterministic Turing machine  . $\mathrm{NP}=$ nondeterministic time $(n k)$.
 
 The best method known for solving languages in NP deterministically uses exponential time. (Remember, computers are deterministic by their very nature.) NP $i$ (exponential time) defined as :
 
